@@ -40,3 +40,74 @@
 .read-the-docs {
   color: #888;
 } */
+.App{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.navbar-container{
+  display: flex;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+}
+
+.navbar-item{
+  margin:10px;
+  color:lightgrey
+
+}
+.logo-img{
+  width: 120px;
+ 
+}
+
+.home{
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100%;
+  
+}
+
+.welcome{
+  width: 500px;
+}
+
+.welcome-header {
+  color: rgb(234, 234, 234);
+  font-size: 40px;
+
+
+}
+.welcome-text{
+  font-size: 16px;
+  width: 390px;
+  color: rgb(234, 234, 234);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.search-form-select{
+  width: 500px;
+  margin-bottom: 5px;
+}
+
+.search-form{
+
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+}
+
+.search-form-submit{
+  width: 500px;
+}

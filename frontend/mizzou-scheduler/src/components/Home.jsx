@@ -1,42 +1,32 @@
-import React from "react";
-import NavBar from "./Nav";
-import Select from 'react-select'
+import React, { useState } from "react";
+
 import { Button, Typography } from '@mui/material';
+import Nav from "./Nav";
 
 function Home(){
-    const courseNameOptions = [{
-        value: 'economics', label: 'Economics'
-    }]
-
-    const courseNumOptions = [{
-        value: 3229, label: '3229'
-    }]
+    const logoImgURL= 'https://content.sportslogos.net/logos/32/757/full/missouri_tigers_logo_secondary_19998019.png'
     return(
         <>
-            <NavBar />
-            <div>
-                {/* <h3 className="dropdown-header">Select your course from the dropdowns</h3> */}
-                
-                <form onSubmit={handleSubmit}>
-                    <label>Select your course from the dropdowns below</label>
-                    <Select options={courseNameOptions} />
-                    <Select options={courseNumOptions} />
+           
+            <div className="home">
+                <div className="welcome">
+                   <h1 className="welcome-header">Welcome to <br></br>Mizzou Exam Scheduler!</h1>
+                   <br></br>
+                   <p className="welcome-text">Find your exam date by searching with the course name or class time.<br></br>
+                    Then, export it to your personal calendar with ease!
+                   </p>
+                   <br></br>
 
-                    <button type="submit" >Get Exam</button>
-      <Button variant="contained" color="primary" type="submit">
-        Click Me
-      </Button>
-                </form>
-                
+                   <Button variant="contained" className="welcome-btn" href="/search">Get Started</Button>
+                </div>
+
+                <img className='logo-img'src = {logoImgURL}  alt='Mizzou Logo'/>
+
 
             </div>
         </>
     )
 }
-const handleSubmit = (e) =>{
-    e.preventDefault()
 
-    alert("From submitted")
-}
 
 export default Home
