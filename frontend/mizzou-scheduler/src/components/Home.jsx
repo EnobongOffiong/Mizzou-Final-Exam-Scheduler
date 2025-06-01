@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import examSchedule from '../assets/exam-schedule.png'
 import { Button, Typography } from '@mui/material';
 import Nav from "./Nav";
 
@@ -20,7 +20,7 @@ function Home(){
                    <Button variant="contained" className="welcome-btn" href="/search">Get Started</Button>
                 </div>
 
-                <img className='logo-img'src = {logoImgURL}  alt='Mizzou Logo'/>
+                <img className='home-welcome-img'src = {examSchedule}  alt='Mizzou Logo'/>
 
 
             </div>
