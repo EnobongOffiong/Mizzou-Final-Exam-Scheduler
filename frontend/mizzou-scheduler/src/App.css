@@ -53,7 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+ 
   width: 90%;
   margin: auto;
 }
@@ -61,8 +61,25 @@
 .navbar-item{
   margin:10px;
   color:lightgrey
-
 }
+
+.nav-icon{
+  width: 45px;
+   
+}
+
+/* .nav-icon:hover{
+  display: none;
+} */
+
+.nav-icon:hover + .nav-text{
+  display: block;
+}
+
+.nav-text{
+  display: none;
+}
+
 .logo-img{
   width: 120px;
  
@@ -73,7 +90,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 100%;
+  flex-grow: 1;
   
 }
 
@@ -95,19 +112,133 @@
   margin-bottom: 15px;
 }
 
+.home-welcome-img{
+  width: 350px;
+}
+.search-by-course{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.search-form{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  max-width: 500px;
+
+  
+}
+.search-form-header{
+  color: white;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+.search-form-instructions{
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.search-by-time{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
+}
+
+.search-by-time-btn{
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(29, 29, 29);
+  color: white;
+  cursor: pointer;
+
+}
+
+.selected{
+  color: rgb(29, 29, 29);
+  background-color: white;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.search-by-time-btn-container{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-evenly;
+ align-items: center;
+}
+
+.search-by-time-container{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  max-width: 550px;
+}
+
 .search-form-select{
   width: 500px;
   margin-bottom: 5px;
 }
 
-.search-form{
-
-  display: flex;
-  flex-direction: column;
-  
-  align-items: center;
-}
-
 .search-form-submit{
   width: 500px;
+  
+}
+
+
+.search-form-label{
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: rgb(234, 234, 234);
+}
+
+.search-alt-text-container{
+  
+  display: flex;
+  width: 500px;
+  /* justify-content: space-evenly; */
+  
+  align-items: left;
+}
+.search-alt-text{
+  margin-top: 10px;
+  font-size: 20px;
+  text-decoration: underline;
+  color:rgb(32, 90, 178);
+  /* margin-left: 20px; */
+}
+
+.search-alt-text:hover{
+  color: white;
+  cursor: pointer;
+}
+
+
+
+.react-time-picker__inputGroup__input {
+  width:70px !important; /* Adjust input width */
+  font-size: 16px; /* Optional: Increase font size */
+}
+.react-time-picker__wrapper {
+  padding: 8px; /* Increase spacing */
+}
+
+.time-input{
+  margin-bottom: 10px;
+  width: 105px;
+}
+
+.time-input-label{
+  font-size: 20px;
 }

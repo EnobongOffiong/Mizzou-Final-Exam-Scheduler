@@ -9,12 +9,13 @@ import Home from './components/Home.jsx'
 import Search from './components/Search.jsx'
 
 function App() {
+  
   return (
     <div className='App'>
       <Nav/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
-        <Route path='/search' element={<Search/>}></Route>
+        <Route path='/search' element={<Search />}></Route>
       </Routes>
     </div>
   )
