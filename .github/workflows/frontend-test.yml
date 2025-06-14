@@ -1,0 +1,11 @@
+name: CI pipeline
+on: [push]
+
+jobs:
+    branch_name:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Branch Name
+              run:
+                echo 'The name of thid branch is' ${{github.ref_name}}
