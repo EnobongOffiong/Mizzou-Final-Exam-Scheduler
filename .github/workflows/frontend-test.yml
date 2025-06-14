@@ -5,12 +5,14 @@ jobs:
     branch_name:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-            - name: Branch Name
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Echo Branch Name
               run: echo 'The name of this branch is' ${{github.ref_name}}
     deploy:
         needs: branch_name
         runs-on: ubuntu-latest
         steps:
             - name: Deploying to production
-              run: 'echo Deploting...'
+              run: 'echo Deploying...'
