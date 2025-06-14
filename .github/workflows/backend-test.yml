@@ -1,0 +1,9 @@
+name: Backend CI/CD workflow
+on: push
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploying to production
+              run: 'echo Deploying...'
