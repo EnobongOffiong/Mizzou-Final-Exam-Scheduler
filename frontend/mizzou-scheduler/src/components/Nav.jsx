@@ -15,7 +15,7 @@ function Nav(){
                     <img className='logo-img'src = {logoImgURL}  alt='Mizzou Logo'/>
                 </Link>
                     <NavLink className= "navbar-item" activeClassName="active" to='/'>
-                       <img className="nav-icon" src={HomeIcon} alt='Home'/>
+                       
                        <p className='nav-text'>Home</p>
                     </NavLink>
 
@@ -30,9 +30,9 @@ function Nav(){
                         Calendar
                     </NavLink>
 
-                    <NavLink className= "navbar-item" activeClassName="active" to='/contact'>
+                    {/* <NavLink className= "navbar-item" activeClassName="active" to='/contact'>
                         Contact
-                    </NavLink>
+                    </NavLink> */}
 
                     <Button className= 'navbar-btn'variant='contained' href={registrarWebsiteURL} target='_blank' >
                     View Exam Schedules</Button>

@@ -45,6 +45,8 @@
   flex-direction: column;
   height: 100vh;
 }
+
+/******* NAV *******/
 .navbar-container{
   display: flex;
 }
@@ -63,21 +65,8 @@
   color:lightgrey
 }
 
-.nav-icon{
-  width: 45px;
-   
-}
-
-/* .nav-icon:hover{
-  display: none;
-} */
-
-.nav-icon:hover + .nav-text{
-  display: block;
-}
-
 .nav-text{
-  display: none;
+  
 }
 
 .logo-img{
@@ -85,6 +74,7 @@
  
 }
 
+/******* HOME *******/
 .home{
   
   display: flex;
@@ -102,7 +92,6 @@
   color: rgb(234, 234, 234);
   font-size: 40px;
 
-
 }
 .welcome-text{
   font-size: 16px;
@@ -115,9 +104,12 @@
 .home-welcome-img{
   width: 350px;
 }
+
+/******* SEARCH *******/
+
+/******* SEARCH BY COURSE *******/
 .search-by-course{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
@@ -126,11 +118,10 @@
 .search-form{
   display: flex;
   flex-direction: column;
-  align-items: left;
+  
   justify-content: center;
   max-width: 500px;
 
-  
 }
 .search-form-header{
   color: white;
@@ -139,12 +130,46 @@
 }
 .search-form-instructions{
   color: white;
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
+
+.search-form-label{
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: rgb(234, 234, 234);
+}
+
+.search-form-select{
+  width: 500px;
+  margin-bottom: 5px;
+}
+
+.search-alt-text-container{
+  
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+  
+  align-items: left;
+}
+.search-alt-text{
+  margin-top: 10px;
+  font-size: 20px;
+  text-decoration: underline;
+  color:rgb(32, 90, 178);
+  /* margin-left: 20px; */
+}
+
+.search-alt-text:hover{
+  color: white;
+  cursor: pointer;
+}
+
+
+/******* SEARCH BY TIME *******/
 .search-by-time{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
@@ -171,74 +196,270 @@
   border: none;
   cursor: pointer;
 }
-.search-by-time-btn-container{
- display: flex;
- flex-direction: column;
- justify-content: space-evenly;
- align-items: center;
-}
+
 
 .search-by-time-container{
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: center;
   max-width: 550px;
 }
 
-.search-form-select{
-  width: 500px;
-  margin-bottom: 5px;
-}
+
 
 .search-form-submit{
   width: 500px;
   
 }
 
-
-.search-form-label{
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: rgb(234, 234, 234);
-}
-
-.search-alt-text-container{
-  
-  display: flex;
-  width: 500px;
-  /* justify-content: space-evenly; */
-  
-  align-items: left;
-}
-.search-alt-text{
-  margin-top: 10px;
-  font-size: 20px;
-  text-decoration: underline;
-  color:rgb(32, 90, 178);
-  /* margin-left: 20px; */
-}
-
-.search-alt-text:hover{
-  color: white;
-  cursor: pointer;
-}
-
-
-
 .react-time-picker__inputGroup__input {
-  width:70px !important; /* Adjust input width */
-  font-size: 16px; /* Optional: Increase font size */
+  width:65px !important; 
+  font-size: 16px; 
+  margin-right: 2px;
 }
-.react-time-picker__wrapper {
-  padding: 8px; /* Increase spacing */
+
+.react-time-picker__inputGroup{
+  display: flex;
+}
+
+.react-time-picker__wrapper{
+  display: flex;
 }
 
 .time-input{
-  margin-bottom: 10px;
-  width: 105px;
+  
+  margin-bottom: 15px;
 }
 
 .time-input-label{
   font-size: 20px;
+}
+
+/******* CALENDAR *******/
+
+.calendar{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-header{
+  font-size: 40px;
+  color:white;
+
+}
+.added-exam-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  
+}
+.added-exam{
+/*   
+  background-color: rgb(59, 58, 58);
+  padding: 50px 80px;
+  margin-top: 15px;
+  border-radius: 10px;
+  
+  box-shadow: 1px;
+  color:white; */
+
+  background: white;
+  border-radius: 10px;
+  padding: 50px 80px;
+  font-size: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #FFD700; /* Gold accent */
+  position: relative;
+  overflow: hidden;
+  color: #222;
+  margin-top: 15px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.added-exam:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.15),
+    0 0 0 2px #FFD700;
+  animation: subtle-pulse 2s infinite ease-in-out;
+}
+
+.added-exam::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700, #000000);
+  opacity: 0.7;
+}
+
+@keyframes subtle-pulse {
+  0% {
+    box-shadow: 
+      0 8px 25px rgba(0, 0, 0, 0.15),
+      0 0 0 2px #FFD700;
+  }
+  50% {
+    box-shadow: 
+      0 8px 30px rgba(0, 0, 0, 0.2),
+      0 0 0 3px rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    box-shadow: 
+      0 8px 25px rgba(0, 0, 0, 0.15),
+      0 0 0 2px #FFD700;
+  }
+}
+
+.search-by-course,
+.search-by-time {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out forwards;
+  animation-delay: 0.2s;
+}
+
+.search-form-select, 
+.react-select__control {
+  position: relative;
+  z-index: 1; 
+}
+
+.courseName {
+  z-index: 1000 !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-form > *,
+.search-by-time-container > * {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.search-form-header {
+  animation-delay: 0.4s;
+}
+
+.search-form-instructions {
+  animation-delay: 0.5s;
+}
+
+.search-form-select {
+  animation-delay: 0.6s;
+}
+
+.search-form-submit {
+  animation-delay: 0.7s;
+}
+
+.search-alt-text-container {
+  animation-delay: 0.8s;
+}
+
+.time-input-label {
+  animation-delay: 0.4s;
+}
+
+.search-by-time-btn {
+  animation-delay: 0.5s;
+}
+
+.time-input {
+  animation-delay: 0.6s;
+}
+
+.home {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.welcome > * {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.welcome-header {
+  animation-delay: 0.4s;
+}
+
+.welcome-text {
+  animation-delay: 0.6s;
+}
+
+.welcome-btn {
+  animation-delay: 0.8s;
+}
+
+.home-welcome-img {
+  opacity: 0;
+  animation: fadeInRight 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.calendar {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.calendar.loaded {
+  opacity: 1;
+}
+
+.added-exam {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.calendar.loaded .added-exam {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/******* MARQUEE *******/
+.marquee-announcement{
+  margin-bottom: 5px;
 }

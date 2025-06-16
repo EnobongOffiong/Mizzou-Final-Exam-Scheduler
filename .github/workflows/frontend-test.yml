@@ -1,18 +1,30 @@
-name: Frontend CI pipeline
+# name: Frontend CI pipeline
+# on: push
+
+# jobs:
+#     branch_name:
+#         runs-on: ubuntu-latest
+#         steps:
+#             - name: Checkout code
+#               uses: actions/checkout@v3
+
+#             - name: Echo Branch Name
+            #   run: echo 'The name of this branch is' 
+#     deploy:
+#         needs: branch_name
+#         runs-on: ubuntu-latest
+#         steps:
+#             - name: Deploying to production
+#               run: 'echo Deploying...'
+
+name: CI/CD pipeline
 on: push
 
 jobs:
-    branch_name:
+    backend:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout code
-              uses: actions/checkout@v3
+            - name: Checkout backend
+                uses: actions/checkout@v3
 
-            - name: Echo Branch Name
-              run: echo 'The name of this branch is' ${{github.ref_name}}
-    deploy:
-        needs: branch_name
-        runs-on: ubuntu-latest
-        steps:
-            - name: Deploying to production
-              run: 'echo Deploying...'
+

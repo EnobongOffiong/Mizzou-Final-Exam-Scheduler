@@ -17,6 +17,7 @@ export const getExamByCourse = async (req, res)=>{
         try {
             const examDateResult = await pool.query('SELECT exam_date, exam_start_time, exam_end_time FROM exam WHERE id = $1', [examNum])
             console.log(examDateResult.rows[0]) 
+            res.json(examDateResult.rows[0])
         } catch (error) {
             console.error(error)
             res.status(500).send(error)
@@ -43,10 +44,12 @@ export const getExamByMeeting =  async(req, res) =>{
         const examNum = examIdResult.rows[0].exam_id //store that exam ID
         console.log(examNum)
         
+        
         //using stored exam ID to find the exam information
         try {
             const examDateResult= await pool.query('SELECT exam_date, exam_start_time, exam_end_time FROM exam where id = $1', [examNum])
             console.log(examDateResult.rows[0])
+            res.json(examDateResult.rows[0])
         } catch (error) {
             console.error(error)
             res.status(500).send(error)
