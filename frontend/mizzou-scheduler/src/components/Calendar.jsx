@@ -2,13 +2,14 @@ import {React, useState, useEffect} from "react";
 import { DateTime } from "luxon";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
 
+
 export default function Calendar() {
 
     const [examsArray, setExamsArray] = useState([])
     const [isLoaded, setIsLoaded] = useState(false)
     
     useEffect(() => {
-        const storedExams = JSON.parse(sessionStorage.getItem("Exams")) || [];
+        const storedExams = JSON.parse(sessionStorage.getItem("Exams")) || []
         setExamsArray(storedExams)
         setTimeout(() => setIsLoaded(true), 50)
     }, []);
@@ -17,8 +18,19 @@ export default function Calendar() {
         return DateTime.fromFormat(input, 'HH:mm:ss').toFormat('h:mm ')
     }
 
+    function removeExam(index){
+
+        let updatedExams = JSON.parse(sessionStorage.getItem("Exams")) || []
+       
+        updatedExams.splice(index, 1)
+
+        sessionStorage.setItem("Exams", JSON.stringify(updatedExams));
+        setExamsArray(updatedExams);
+        
+    }
+
     const dates = examsArray.map(exam => ({
-        name : `${exam.Name} final`,
+        name : `${exam.Name} Final`,
         startTime: exam.exam_start_time,
         startDate: exam.exam_date,
         endTime: exam.exam_end_time
@@ -40,6 +52,9 @@ export default function Calendar() {
                                 transitionDelay: `${index * 0.1}s`
                             }}
                         >
+                            
+                            <button className='delete-button ' onClick ={()=>removeExam(index)}>{'\u2715'}</button>
+                            
                             <p>Name: {exam.Name} final </p>
                             <p>📅 Exam date: {exam.exam_date}</p>
                             <p>🕒 From: {convert(exam.exam_start_time)} {isStartPm ? "pm" : "am"}</p>
