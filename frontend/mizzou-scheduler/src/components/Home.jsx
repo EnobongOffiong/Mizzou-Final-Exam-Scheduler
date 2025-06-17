@@ -17,7 +17,7 @@ function Home(){
                    </p>
                    <br></br>
 
-                   <Button variant="contained" className="welcome-btn" href="/search">Get Started</Button>
+                   <Button sx={{ backgroundColor: 'black', color: 'white' }} variant="contained" className="welcome-btn" href="/search">Get Started</Button>
                 </div>
 
                 <img className='home-welcome-img'src = {examSchedule}  alt='Mizzou Logo'/>
