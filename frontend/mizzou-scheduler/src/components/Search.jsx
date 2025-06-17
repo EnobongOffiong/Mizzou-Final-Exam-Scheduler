@@ -232,7 +232,7 @@ function Search({res, setRes}){
                     options={courseNameOptions} onChange={handleSelectChange} 
                     placeholder="Select a course"  isSearchable='true'/>
 
-                    <Select className="search-form-select" name ="courseNumber"
+                    <Select aria-invalid={true} className="search-form-select" name ="courseNumber"
                     options={courseNumOptions} onChange={handleSelectChange}
                     placeholder="Select a course number"  isSearchable='true'/>
 
@@ -312,19 +312,7 @@ function Search({res, setRes}){
                                 ADD TO CALENDAR
                     </Button>   
                 {/* </div> */}
-
                 
-
-                {/* <AddToCalendarButton
-
-                    name="Test-Event"
-                    startDate={res.exam_date}
-                    endDate={res.exam_date}
-                    startTime={res.exam_start_time}
-                    endTime={res.exam_end_time}
-                    options={['Apple','Google','Yahoo','iCal']}
-                    timeZone="America/Chicago"
-                    ></AddToCalendarButton> */}
                 </div>
             </div>
 }
