@@ -34,7 +34,7 @@ function Nav(){
                         Contact
                     </NavLink> */}
 
-                    <Button className= 'navbar-btn'variant='contained' href={registrarWebsiteURL} target='_blank' >
+                    <Button sx={{ backgroundColor: '#FFFFFF', color: 'black' }} className= 'navbar-btn'variant='contained' href={registrarWebsiteURL} target='_blank' >
                     View Exam Schedules</Button>
                     
                 </nav>
