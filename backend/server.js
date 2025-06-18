@@ -2,10 +2,9 @@ import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 
-
 import { getExamByCourse, getExamByMeeting } from './routes.js'
 
-const app = express()
+export const app = express()
 const router = express.Router()
 const PORT = 8080
 
