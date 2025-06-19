@@ -12,7 +12,7 @@ export const getExamByCourse = async (req, res)=>{
         [course, courseNum])
       
         if (examIdResult.rows.length === 0) {
-            return res.status(404).send(error)
+            return res.status(404).json({ error: 'Exam ID not found' })
         }
 
         const examNum = examIdResult.rows[0].exam_id //store that exam ID
@@ -59,7 +59,7 @@ export const getExamByMeeting =  async(req, res) =>{
             if (examIdResult.rows.length === 0) {
                 return res.status(404).json({ error: 'Exam schedule not found' })
             }
-            
+
             res.json(examDateResult.rows[0])
     }
     catch(error){
