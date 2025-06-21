@@ -132,6 +132,7 @@
   color: white;
   font-size: 16px;
   margin-bottom: 10px;
+
 }
 
 .search-form-label{
@@ -165,6 +166,26 @@
   color: white;
   cursor: pointer;
 }
+
+
+.not-found-message {
+  color: #d32f2f; /* A red color for error messages */
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 500px;
+  padding: 8px;
+  background-color: #ffebee; /* Light red background */
+  border-radius: 4px;
+  border-left: 3px solid #d32f2f;
+  animation: fadeIn 0.3s ease-in;
+}
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 
 
 /******* SEARCH BY TIME *******/
@@ -230,6 +251,20 @@
   margin-bottom: 15px;
 }
 
+.name-input-div{
+  display: flex;
+  margin-bottom: 10px
+}
+
+.search-by-time-name-input{
+  margin-left: 10px;
+  width: 270px;
+  padding: 10px;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+}
+
 .time-input-label{
   font-size: 20px;
 }
@@ -274,6 +309,7 @@
   color: #222;
   margin-top: 15px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-sizing: border-box;
 }
 
  .delete-button{
@@ -284,6 +320,7 @@
   background: none;
   cursor: pointer;
   font-size: 23px;
+  box-sizing: border-box;
 }
 
 .added-exam:hover {
@@ -472,4 +509,92 @@
 /******* MARQUEE *******/
 .marquee-announcement{
   margin-bottom: 4px;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-form, .welcome, .search-form-select, Button,
+  .search-alt-text-container, .search-by-time-container,
+  .search-form-instructions, .welcome-text{
+    max-width: 300px;
+    width: 100%;
+  }
+
+  .search-by-time-btn{
+    margin-bottom: 5px;
+  }
+
+  .delete-button{
+    max-width: fit-content;
+  }
+
+  .search-form-instructions{
+    font-size: 17px;
+    line-height: 1.3;
+  }
+  
+  .search-form-header{
+    font-size: 45px;
+  }
+
+  .logo-img{
+    width:100px;
+    height: auto;
+  }
+
+  .navbar{
+    width: 100%;
+    padding: 0 15px;
+  }
+  .navbar > .css-1j02yc7-MuiButtonBase-root-MuiButton-root{
+    font-size: 10px;
+    
+  }
+
+  .home-welcome-img{
+    max-width: 330px;
+  }
+
+  .home{
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 0 15px;
+  }
+.added-exam-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+  .added-exam{
+    padding: 30px 60px;
+    font-size: 18px;
+    width: 100%; 
+    box-sizing: border-box;
+  }
+
+  body, html {
+    overflow-x: hidden;
+  }
+}
+
+@media only screen and (max-width: 400px){
+  .logo-img{
+    width:70px;
+    height: auto;
+  }
+
+  .navbar > .css-1j02yc7-MuiButtonBase-root-MuiButton-root{
+    font-size: 8px;
+    
+  }
+
+  .added-exam{
+    padding: 30px 60px;
+    font-size: 18px;
+    width: 100%; 
+    box-sizing: border-box;
+  }
+  
+  
+
+ 
 }
