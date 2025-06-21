@@ -1,7 +1,7 @@
 import React from 'react'
+import { useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Button } from '@mui/material'
-import HomeIcon from '../assets/home-icon-silhouette.png'
 function Nav(){
 
     const registrarWebsiteURL = 'https://registrar.missouri.edu/academic-calendar/final-exam-schedule/'
@@ -11,18 +11,17 @@ function Nav(){
             <div className='navbar-container'>
 
                 <nav className='navbar'>
-                <Link to='/' className='logo'>
-                    <img className='logo-img'src = {logoImgURL}  alt='Mizzou Logo'/>
-                </Link>
+                    <Link to='/' className='logo'>
+                        <img className='logo-img'src = {logoImgURL}  alt='Mizzou Logo'/>
+                    </Link>
+
                     <NavLink className= "navbar-item" activeClassName="active" to='/'>
                        
                        <p className='nav-text'>Home</p>
                     </NavLink>
 
-                    <NavLink className= "navbar-item" activeClassName="active" to='/search' onClick={()=>
-                    {if(searchingByCourse){
-
-                    }}}>
+                    <NavLink className= "navbar-item" activeClassName="active" to='/search'>
+                   
                         <p>Search</p>
                     </NavLink>
 

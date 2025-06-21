@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from "react";
+import React,{ useState, useEffect} from "react";
 import { DateTime } from "luxon";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
 
@@ -55,7 +55,7 @@ export default function Calendar() {
                             
                             <button className='delete-button ' onClick ={()=>removeExam(index)}>{'\u2715'}</button>
                             
-                            <p>Name: {exam.Name} final </p>
+                            <p>📝 Name: {exam.Name} final </p>
                             <p>📅 Exam date: {exam.exam_date}</p>
                             <p>🕒 From: {convert(exam.exam_start_time)} {isStartPm ? "pm" : "am"}</p>
                             <p>🕒 To: {convert(exam.exam_end_time)} {isEndPm ? "pm" : "am"}</p>

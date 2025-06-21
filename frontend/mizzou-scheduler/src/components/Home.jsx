@@ -10,7 +10,7 @@ function Home(){
            
             <div className="home">
                 <div className="welcome">
-                   <h1 className="welcome-header">Welcome to <br></br>Mizzou Exam Scheduler!</h1>
+                   <h1 className="welcome-header">Welcome to Mizzou Exam Scheduler!</h1>
                    <br></br>
                    <p className="welcome-text">Find your exam date by searching with the course name or class time.<br></br>
                     Then, export it to your personal calendar with ease!
