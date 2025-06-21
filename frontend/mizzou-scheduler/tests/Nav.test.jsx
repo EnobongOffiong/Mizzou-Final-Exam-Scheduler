@@ -1,0 +1,41 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react'
+import { describe, it, expect , vi, beforeEach} from 'vitest';
+import "@testing-library/jest-dom/vitest";
+import Nav from '../src/components/Nav.jsx';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event'
+
+describe('group', () => {
+    // beforeEach(() => {
+    //     // Clear all mocks before each test
+    //     vi.clearAllMocks();
+    // });
+
+    it('should render navigation links', async () => {
+        render(
+            <BrowserRouter>
+                <Nav/>
+            </BrowserRouter>
+        )
+        // const mockOpen = vi.fn()
+        // global.open = mockOpen
+
+        expect(screen.getByText(/Home/)).toBeInTheDocument();
+        expect(screen.getByText(/Search/)).toBeInTheDocument()
+        expect(screen.getByText(/Calendar/)).toBeInTheDocument()
+
+       expect(screen.getByRole('img', {name: /Mizzou Logo/i})).toBeInTheDocument()
+        
+        
+        const button = screen.getByRole('link', {name: /view exam schedules/i})
+    
+        expect(button).toBeInTheDocument();
+        expect(button).toHaveAttribute('href', expect.stringContaining('registrar.missouri.edu'))
+        await userEvent.click(button)
+
+        // expect(mockOpen).toHaveBeenCalledTimes(1)
+        // expect(mockOpen).toHaveBeenCalledWith('https://registrar.missouri.edu/academic-calendar/final-exam-schedule/', '_blank')
+
+    })
+})
