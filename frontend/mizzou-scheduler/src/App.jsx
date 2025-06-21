@@ -11,7 +11,7 @@ import Calendar from './components/Calendar.jsx'
 import Footer from './components/Marquee.jsx'
 
 function App() {
-  const [res, setRes] = useState({})
+  
   
   return (
     <div className='App'>
@@ -19,7 +19,7 @@ function App() {
       <Nav/>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
-        <Route path='/search' element={<Search res={res} setRes={setRes} /> }></Route>
+        <Route path='/search' element={<Search  /> }></Route>
         <Route path='/calendar' element={<Calendar />}></Route>
       </Routes>
       
