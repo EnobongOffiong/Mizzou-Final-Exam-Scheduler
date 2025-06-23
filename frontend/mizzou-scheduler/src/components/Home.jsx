@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import examSchedule from '../assets/exam-schedule.png'
-import { Button, Typography } from '@mui/material';
-import Nav from "./Nav";
+import { Button } from '@mui/material';
+
 
 function Home(){
     const logoImgURL= 'https://content.sportslogos.net/logos/32/757/full/missouri_tigers_logo_secondary_19998019.png'

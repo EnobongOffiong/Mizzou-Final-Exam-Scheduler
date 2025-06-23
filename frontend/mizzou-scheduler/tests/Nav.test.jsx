@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect , vi, beforeEach} from 'vitest';
+import { describe, it, expect } from 'vitest';
 import "@testing-library/jest-dom/vitest";
 import Nav from '../src/components/Nav.jsx';
 import { BrowserRouter, MemoryRouter } from 'react-router-dom';
@@ -18,8 +18,6 @@ describe('group', () => {
                 <Nav/>
             </BrowserRouter>
         )
-        // const mockOpen = vi.fn()
-        // global.open = mockOpen
 
         expect(screen.getByText(/Home/)).toBeInTheDocument();
         expect(screen.getByText(/Search/)).toBeInTheDocument()
