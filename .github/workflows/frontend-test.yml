@@ -57,7 +57,7 @@ jobs:
       #     cache: 'npm'
       
         - name: Install frontend dependencies
-          working-directory: ./frontend
+          working-directory: ./frontend/mizzou-scheduler
           run: npm install
         
         - name: Run frontend tests
