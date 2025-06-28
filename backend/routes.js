@@ -8,18 +8,18 @@ export const getExamByCourse = async (req, res)=>{
 
     try{
         // query to get the exam ID of the request class
-        const examIdResult = await pool.query('SELECT exam_id FROM course_or_meeting_time WHERE LOWER(course_name) = $1 AND course_num = $2',
+        const examIdResult = await pool.query('SELECT exam_id FROM course WHERE LOWER(course_name) = $1 AND course_num = $2',
         [course, courseNum])
       
         if (examIdResult.rows.length === 0) {
             return res.status(404).json({ error: 'Exam ID not found' })
         }
-
+        
         const examNum = examIdResult.rows[0].exam_id //store that exam ID
 
         //using stored exam ID to find the exam information
             const examDateResult = await pool.query('SELECT exam_date, exam_start_time, exam_end_time FROM exam WHERE id = $1', [examNum])
-            console.log(examDateResult.rows[0]) 
+            
             if (examDateResult.rows.length === 0) {
                 return res.status(404).json({ error: 'Exam schedule not found' })
             }
@@ -49,12 +49,11 @@ export const getExamByMeeting =  async(req, res) =>{
         }
 
         const examNum = examIdResult.rows[0].exam_id //store that exam ID
-        console.log(examNum)
+       
         
         //using stored exam ID to find the exam information
    
             const examDateResult= await pool.query('SELECT exam_date, exam_start_time, exam_end_time FROM exam where id = $1', [examNum])
-            console.log(examDateResult.rows[0])
 
             if (examIdResult.rows.length === 0) {
                 return res.status(404).json({ error: 'Exam schedule not found' })
