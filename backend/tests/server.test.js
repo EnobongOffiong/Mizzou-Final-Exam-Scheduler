@@ -1,5 +1,4 @@
 
-
 import axios from "axios";
 import { describe, it, expect, expectTypeOf, vi, beforeAll, afterAll } from "vitest";
 import { app } from '../server.js';
@@ -42,9 +41,9 @@ describe('API Endpoints with DB Mocking', () => {
         .mockResolvedValueOnce({ rows: [{ exam_id: 5 }] }) // First query
         .mockResolvedValueOnce({ rows: [{ // Second query
             
-                exam_date: '2025-05-12',
-                exam_start_time: '17:30:00',
-                exam_end_time: '19:30:00'
+                exam_date: '2025-12-16',
+                exam_start_time: '15:00:00',
+                exam_end_time: '17:00:00'
 
             }] });
 
@@ -52,9 +51,9 @@ describe('API Endpoints with DB Mocking', () => {
       
       expect(response.status).toBe(200);
       expect(response.data).toEqual({
-        exam_date: '2025-05-12',
-        exam_start_time: '17:30:00',
-        exam_end_time: '19:30:00'
+        exam_date: '2025-12-16',
+        exam_start_time: '15:00:00',
+        exam_end_time: '17:00:00'
 
     });
 
@@ -77,9 +76,9 @@ describe('API Endpoints with DB Mocking', () => {
         pool.query.mockResolvedValueOnce({rows:
         [
             {
-                exam_date: '2025-05-12',
-                exam_start_time: '10:00:00',
-                exam_end_time: '12:00:00'
+                exam_date: '2025-12-18',
+                exam_start_time: '15:00:00',
+                exam_end_time: '17:00:00'
 
             }
         ]})
@@ -90,9 +89,9 @@ describe('API Endpoints with DB Mocking', () => {
 
         expect(response.status).toBe(200);
       expect(response.data).toEqual({
-        exam_date: '2025-05-12',
-        exam_start_time: '10:00:00',
-        exam_end_time: '12:00:00'
+        exam_date: '2025-12-18',
+        exam_start_time: '15:00:00',
+        exam_end_time: '17:00:00'
       })
 
       expect(pool.query).toHaveBeenCalledWith('SELECT exam_id FROM meeting_time WHERE LOWER(meeting_days) = $1 AND meeting_start_time = $2 AND meeting_end_time = $3',
