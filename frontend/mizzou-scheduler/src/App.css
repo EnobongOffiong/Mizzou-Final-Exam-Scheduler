@@ -65,10 +65,6 @@
   color:rgb(230, 230, 230)
 }
 
-.nav-text{
-  
-}
-
 .logo-img{
   width: 120px;
  
@@ -169,18 +165,57 @@
 
 
 .not-found-message {
-  color: #d32f2f; /* A red color for error messages */
+  color: #d32f2f; 
   margin-top: 10px;
   font-size: 14px;
   font-weight: 500;
   text-align: center;
   max-width: 500px;
   padding: 8px;
-  background-color: #ffebee; /* Light red background */
+  background-color: #ffebee; 
   border-radius: 4px;
   border-left: 3px solid #d32f2f;
   animation: fadeIn 0.3s ease-in;
 }
+
+.found-message{
+  color: #2fd37b; 
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 500px;
+  padding: 8px;
+  background-color: #ebfff1; 
+  border-radius: 4px;
+  border-left: 3px solid #2fd37b;
+  opacity: 1;
+  animation: fade 2s linear;
+}
+
+.duplicate-message{
+  color: #d32f2f; 
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 500px;
+  padding: 8px;
+  background-color: #ffebee; 
+  border-radius: 4px;
+  border-left: 3px solid #d32f2f;
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* .elementToFadeInAndOut {
+  opacity: 1;
+  animation: fade 2s linear;
+} */
+
+
+@keyframes fade {
+0%,100% { opacity: 0 }
+50% { opacity: 1 }}
 
   @keyframes fadeIn {
     from { opacity: 0; }
@@ -303,7 +338,7 @@
   padding: 50px 80px;
   font-size: 20px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  border-left: 5px solid #FFD700; /* Gold accent */
+  border-left: 5px solid #FFD700; 
   position: relative;
   overflow: hidden;
   color: #222;

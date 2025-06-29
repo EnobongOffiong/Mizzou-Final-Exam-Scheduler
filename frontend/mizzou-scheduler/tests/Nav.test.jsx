@@ -7,11 +7,7 @@ import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event'
 
 describe('group', () => {
-    // beforeEach(() => {
-    //     // Clear all mocks before each test
-    //     vi.clearAllMocks();
-    // });
-
+   
     it('should render navigation links', async () => {
         render(
             <BrowserRouter>
@@ -30,10 +26,6 @@ describe('group', () => {
     
         expect(button).toBeInTheDocument();
         expect(button).toHaveAttribute('href', expect.stringContaining('registrar.missouri.edu'))
-        await userEvent.click(button)
-
-        // expect(mockOpen).toHaveBeenCalledTimes(1)
-        // expect(mockOpen).toHaveBeenCalledWith('https://registrar.missouri.edu/academic-calendar/final-exam-schedule/', '_blank')
 
     })
 })
