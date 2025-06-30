@@ -6,7 +6,7 @@ import TimePicker from 'react-time-picker';
 const API_BASE_URL = import.meta.env.PROD
   ? import.meta.env.VITE_API_BASE_URL_PROD
   : 'http://localhost:8080';
-  
+
 //array for dynamically rendering buttons for days of the week
 const days = [
     { value: "M", id: "0", label: "Monday" },
@@ -200,9 +200,9 @@ export default function SearchByTime({
                 </Button>   
 
                 <div className="search-alt-text-container">
-                    <a href="/calendar" className="search-alt-text">
+                    <Link to="/calendar" className="search-alt-text">
                         <p>View Calendar</p>
-                    </a>
+                    </Link>
 
                     <p 
                         onClick={() => {

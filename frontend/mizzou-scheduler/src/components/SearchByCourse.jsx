@@ -4,6 +4,7 @@ import Select from 'react-select'
 import axios from "axios"
 import { courseNames } from "./CourseOptions/courseNames"
 import { courseNums } from "./CourseOptions/courseNums"
+import { Link } from "react-router-dom"
 
 const API_BASE_URL = import.meta.env.PROD
   ? import.meta.env.VITE_API_BASE_URL_PROD
@@ -147,9 +148,9 @@ export default function SearchByCourse({
                 </Button>     
 
                 <div className="search-alt-text-container">
-                    <a href="/calendar" className="search-alt-text">
+                    <Link to="/calendar" className="search-alt-text">
                         <p>View Calendar</p>
-                    </a>
+                    </Link>
 
                     <p 
                         onClick={() => {

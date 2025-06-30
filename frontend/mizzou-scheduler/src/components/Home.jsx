@@ -1,7 +1,7 @@
 import React from "react";
 import examSchedule from '../assets/exam-schedule.png'
 import { Button } from '@mui/material';
-
+import { Link } from "react-router-dom";
 
 function Home(){
     const logoImgURL= 'https://content.sportslogos.net/logos/32/757/full/missouri_tigers_logo_secondary_19998019.png'
@@ -17,7 +17,10 @@ function Home(){
                    </p>
                    <br></br>
 
-                   <Button sx={{ backgroundColor: 'black', color: 'white' }} variant="contained" className="welcome-btn" href="/search">Get Started</Button>
+                   <Button 
+                        sx={{ backgroundColor: 'black', color: 'white' }}
+                        variant="contained" className="welcome-btn" 
+                        component={Link} to="/search">Get Started</Button>
                 </div>
 
                 <img className='home-welcome-img'src = {examSchedule}  alt='Mizzou Logo'/>
