@@ -4,6 +4,11 @@ import Select from 'react-select'
 import axios from "axios"
 import { courseNames } from "./CourseOptions/courseNames"
 import { courseNums } from "./CourseOptions/courseNums"
+
+const API_BASE_URL = import.meta.env.PROD
+  ? import.meta.env.VITE_API_BASE_URL_PROD
+  : 'http://localhost:8080';
+
 export default function SearchByCourse({ 
     setSearchingByCourse, 
     setNotFound, 
@@ -30,8 +35,10 @@ export default function SearchByCourse({
         
         let { courseName, courseNumber } = formData; 
         console.log(formData);
-
-        const url = `http://localhost:8080/${courseName}/${courseNumber}`; //populate url with provided information
+        console.log(import.meta.env)
+        console.log("hey")
+        console.log(import.meta.env.VITE_API_BASE_URL_PROD )
+        const url = `${API_BASE_URL}/${courseName}/${courseNumber}`; //populate url with provided information
         
         try {
             setNotFound(false);
@@ -48,7 +55,8 @@ export default function SearchByCourse({
            // setRes(data);
 
             console.log(data);
-            const existingExams = JSON.parse(sessionStorage.getItem("Exams")) || [];  // fetch existing exams from local storage if any
+            console.log(import.meta.env)
+            const existingExams = JSON.parse(sessionStorage.getItem("Exams")) || [];  // fetch existing exams from session storage if any
             let updatedExams = [...existingExams];
             
             let isDuplicate = false;//duplicate exam checker
@@ -66,7 +74,7 @@ export default function SearchByCourse({
             //if exam isnt already stored, add it to the update exams array before sending that to session storage
             if(!isDuplicate) {
                 setCourseFound(true);
-                updatedExams = [...existingExams, calendarData];
+                updatedExams = [...existingExams, data];
             }
 
               // pass updated exams to session storage
@@ -155,6 +163,8 @@ export default function SearchByCourse({
                         Course not listed?
                     </p>
                 </div>
+
+                
             </form>
         </div>
     );

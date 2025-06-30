@@ -207,10 +207,6 @@
   animation: fadeIn 0.3s ease-in;
 }
 
-/* .elementToFadeInAndOut {
-  opacity: 1;
-  animation: fade 2s linear;
-} */
 
 
 @keyframes fade {

@@ -3,6 +3,10 @@ import { Button } from "@mui/material";
 import axios from "axios";
 import TimePicker from 'react-time-picker';
 
+const API_BASE_URL = import.meta.env.PROD
+  ? import.meta.env.VITE_API_BASE_URL_PROD
+  : 'http://localhost:8080';
+  
 //array for dynamically rendering buttons for days of the week
 const days = [
     { value: "M", id: "0", label: "Monday" },
@@ -51,7 +55,7 @@ export default function SearchByTime({
             meetingDays += selectedDays[day].value; 
         }
 
-        const url = `http://localhost:8080/${meetingDays}/${startTime}/${endTime}`; //populate url with provided information
+        const url = `${API_BASE_URL}/${meetingDays}/${startTime}/${endTime}`; //populate url with provided information
 
         try {
 
