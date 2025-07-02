@@ -10,7 +10,7 @@ import Home from './components/Home.jsx'
 import Search from './components/Search.jsx'
 import Calendar from './components/Calendar.jsx'
 import Footer from './components/Marquee.jsx'
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics';
 
 function App() {
   
