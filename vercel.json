@@ -13,18 +13,7 @@
         "use": "@vercel/node"
       }
     ],
-    "routes": [
-    
-      {
-        "src": "/([^/]+)/(\\d+)", 
-        "dest": "backend/server.js"
-      },
-     
-      {
-        "src": "/([^/]+)/([^/]+)/([^/]+)",  
-        "dest": "backend/server.js"
-      }
-    ],
+   
     "rewrites": [
         {
           "source": "/(.*)",
