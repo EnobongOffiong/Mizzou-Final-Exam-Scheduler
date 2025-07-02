@@ -15,7 +15,11 @@ export default function SearchByCourse({
     setNotFound, 
     setCourseFound,
     setDuplicate,
-    setDuplicateExam 
+    setDuplicateExam,
+    notFound,
+    courseFound,
+    duplicate,
+    duplicateExam
 }) {
 
     //state storing the course and cour name users select
@@ -164,6 +168,9 @@ export default function SearchByCourse({
                         Course not listed?
                     </p>
                 </div>
+                {notFound && <p className="not-found-message">Course not found. Please try again</p>}
+                {courseFound && <p className="found-message">Exam added to calendar!</p>}
+                {duplicate && <p className="duplicate-message">Conflicting exam time already in calendar: {duplicateExam}</p>}  
 
                 
             </form>

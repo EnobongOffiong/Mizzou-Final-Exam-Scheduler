@@ -28,6 +28,11 @@ const [duplicateExam, setDuplicateExam] = useState('');
                     setCourseFound={setCourseFound}
                     setDuplicate={setDuplicate}
                     setDuplicateExam={setDuplicateExam}
+                    notFound={notFound}
+                    duplicate={duplicate}
+                    duplicateExam={duplicateExam}
+                    courseFound={courseFound}
+
                 />
             ) : (
                 <SearchByTime 
@@ -36,13 +41,14 @@ const [duplicateExam, setDuplicateExam] = useState('');
                     setCourseFound={setCourseFound}
                     setDuplicate={setDuplicate}
                     setDuplicateExam={setDuplicateExam}
+                    notFound={notFound}
+                    duplicate={duplicate}
+                    duplicateExam={duplicateExam}
+                    courseFound={courseFound}
                 />
                 
             )}
             
-            {notFound && <p className="not-found-message">Course not found. Please try again</p>}
-            {courseFound && <p className="found-message">Exam added to calendar!</p>}
-            {duplicate && <p className="duplicate-message">Conflicting exam time already in calendar: {duplicateExam}</p>}
         </>
     )
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 import axios from "axios";
 import TimePicker from 'react-time-picker';
+import { Link } from "react-router-dom";
 
 const API_BASE_URL = import.meta.env.PROD
   ? import.meta.env.VITE_API_BASE_URL_PROD
@@ -20,7 +21,12 @@ export default function SearchByTime({
     setSearchingByCourse, 
     setNotFound, 
     setCourseFound,
-    setDuplicate
+    setDuplicate,
+    setDuplicateExam,
+    notFound,
+    courseFound,
+    duplicate,
+    duplicateExam
 }) {
    
     const [res, setRes] = useState({}); // response from query
@@ -38,8 +44,7 @@ export default function SearchByTime({
     const [selectedDays, setSelectedDays] = useState([]);
 
     // state varaible for holding the name of duplicate exams to inform user what is conflicting
-    const [duplicateExam, setDuplicateExam] = useState('');
-
+  
     //handle add to calendar
     async function handleSubmit(e) {
         e.preventDefault();
@@ -215,7 +220,11 @@ export default function SearchByTime({
                     >
                         Search by course
                     </p>
+                     
                 </div>
+                {notFound && <p className="not-found-message">Course not found. Please try again</p>}
+                {courseFound && <p className="found-message">Exam added to calendar!</p>}
+                {duplicate && <p className="duplicate-message">Conflicting exam time already in calendar: {duplicateExam}</p>} 
             </div>
         </div>
     );
