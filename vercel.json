@@ -1,4 +1,33 @@
-{"rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
+{
+    "version": 2,
+    "builds": [
+      
+      {
+        "src": "frontend/mizzou-scheduler/vite.config.js",
+        "use": "@vercel/static-build",
+        "config": { "distDir": "dist" }  
+      },
+     
+      {
+        "src": "backend/server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+    
+      {
+        "src": "/([^/]+)/(\\d+)", 
+        "dest": "backend/server.js"
+      },
+     
+      {
+        "src": "/([^/]+)/([^/]+)/([^/]+)",  
+        "dest": "backend/server.js"
+      },
+     
+      {
+        "src": "/(.*)",
+        "dest": "frontend/mizzou-scheduler/index.html"
+      }
+    ]
+  }
