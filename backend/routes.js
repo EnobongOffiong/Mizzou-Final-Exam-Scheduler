@@ -5,7 +5,7 @@ export const getExamByCourse = async (req, res)=>{
    
     let {course, number: courseNum} = req.params // get course name and number from params
     course = course.toLowerCase()
-
+     console.log(req.params)
     try{
         // query to get the exam ID of the request class
         const examIdResult = await pool.query('SELECT exam_id FROM course WHERE LOWER(course_name) = $1 AND course_num = $2',
