@@ -1,25 +1,32 @@
 {
     "version": 2,
     "builds": [
-      
       {
         "src": "frontend/mizzou-scheduler/vite.config.js",
         "use": "@vercel/static-build",
-        "config": { "distDir": "dist" }  
+        "config": {
+          "distDir": "frontend/mizzou-scheduler/dist"
+        }
       },
-     
       {
         "src": "backend/server.js",
         "use": "@vercel/node"
       }
     ],
-   
-    "rewrites": [
-        {
-          "source": "/(.*)",
-          "destination": "frontend/mizzou-scheduler/index.html"
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/backend/server.js"
+      },
+      {
+        "src": "/frontend/mizzou-scheduler/assets/(.*)",
+        "headers": {
+          "Cache-Control": "public, max-age=31536000, immutable"
         }
-      ]
-    
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/frontend/mizzou-scheduler/dist/index.html"
+      }
+    ]
   }
-
