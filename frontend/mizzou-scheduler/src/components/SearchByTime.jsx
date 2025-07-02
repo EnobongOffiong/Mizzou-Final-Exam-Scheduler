@@ -60,7 +60,7 @@ export default function SearchByTime({
             meetingDays += selectedDays[day].value; 
         }
 
-        const url = `${API_BASE_URL}/${meetingDays}/${startTime}/${endTime}`; //populate url with provided information
+        const url = `${API_BASE_URL}/api/${meetingDays}/${startTime}/${endTime}`; //populate url with provided information
 
         try {
 

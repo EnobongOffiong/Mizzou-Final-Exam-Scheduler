@@ -7,9 +7,11 @@ export default defineConfig({
   server: {
     open: true
   },
+  base: '/frontend/mizzou-scheduler/',
   test: {
     globals: true,       // Use Vitest's global APIs (e.g., `expect`, `describe`)
     environment: 'jsdom', // Simulate a browser environment for DOM testing
   },
 });
   
+

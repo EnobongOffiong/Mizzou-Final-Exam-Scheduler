@@ -43,7 +43,7 @@ export default function SearchByCourse({
         console.log(import.meta.env)
         console.log("hey")
         console.log(import.meta.env.VITE_API_BASE_URL_PROD )
-        const url = `${API_BASE_URL}/${courseName}/${courseNumber}`; //populate url with provided information
+        const url = `${API_BASE_URL}/api/${courseName}/${courseNumber}`; //populate url with provided information
         
         try {
             setNotFound(false);
