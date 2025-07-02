@@ -34,7 +34,7 @@ describe('API Endpoints with DB Mocking', () => {
     vi.clearAllMocks();
   });
 
-  describe('GET /:course/:number', () => {
+  describe('GET /api/:course/:number', () => {
     it('should return 200 with exam details for valid course', async () => {
       // Mock the database responses
       pool.query
@@ -47,7 +47,7 @@ describe('API Endpoints with DB Mocking', () => {
 
             }] });
 
-      const response = await axios.get(`${baseURL}/economics/3229`);
+      const response = await axios.get(`${baseURL}/api/economics/3229`);
       
       expect(response.status).toBe(200);
       expect(response.data).toEqual({
@@ -69,7 +69,7 @@ describe('API Endpoints with DB Mocking', () => {
     });
   })
   
-  describe('GET /:meetingDays/:startTime/:endTime',  () => {
+  describe('GET /api/:meetingDays/:startTime/:endTime',  () => {
     it('should return 200 for exams details for valid meeting time', async() => {
         
         pool.query.mockResolvedValueOnce({rows:[{exam_id: 2}] })
@@ -83,7 +83,7 @@ describe('API Endpoints with DB Mocking', () => {
             }
         ]})
 
-        const response = await axios.get(`${baseURL}/tr/11:00:00/11:50:00`)
+        const response = await axios.get(`${baseURL}/api/tr/11:00:00/11:50:00`)
 
         
 
