@@ -10,6 +10,7 @@ import Home from './components/Home.jsx'
 import Search from './components/Search.jsx'
 import Calendar from './components/Calendar.jsx'
 import Footer from './components/Marquee.jsx'
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   
@@ -23,7 +24,7 @@ function App() {
         <Route path='/search' element={<Search  /> }></Route>
         <Route path='/calendar' element={<Calendar />}></Route>
       </Routes>
-      
+      <Analytics />
     </div>
   )
 }

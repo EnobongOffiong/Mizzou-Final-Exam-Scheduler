@@ -19,7 +19,8 @@
     "express": "^5.1.0",
     "nodemon": "^3.1.10",
     "pg": "^8.16.0",
-    "pg-hstore": "^2.3.4"
+    "pg-hstore": "^2.3.4",
+    "vercel": "^44.2.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
