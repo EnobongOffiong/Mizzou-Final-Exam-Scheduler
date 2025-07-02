@@ -40,13 +40,16 @@
 .read-the-docs {
   color: #888;
 } */
+
+/* ===== BASE STYLES ===== */
 .App{
   display: flex;
   flex-direction: column;
   height: 100vh;
+  
 }
 
-/******* NAV *******/
+/* ===== NAVBAR STYLES ===== */
 .navbar-container{
   display: flex;
 }
@@ -55,7 +58,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
- 
   width: 90%;
   margin: auto;
 }
@@ -67,17 +69,14 @@
 
 .logo-img{
   width: 120px;
- 
 }
 
-/******* HOME *******/
+/* ===== HOME STYLES ===== */
 .home{
-  
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-grow: 1;
-  
 }
 
 .welcome{
@@ -101,23 +100,25 @@
   width: 350px;
 }
 
-/******* SEARCH *******/
+/* ===== SEARCH COMPONENTS ===== */
 
-/******* SEARCH BY COURSE *******/
-.search-by-course{
+.search-by-course,
+.search-by-time {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out forwards;
+  animation-delay: 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
 }
 
+/* ===== SEARCH BY COURSE ===== */
 .search-form{
   display: flex;
   flex-direction: column;
-  
   justify-content: center;
   max-width: 500px;
-
 }
 .search-form-header{
   color: white;
@@ -128,7 +129,6 @@
   color: white;
   font-size: 16px;
   margin-bottom: 10px;
-
 }
 
 .search-form-label{
@@ -143,89 +143,24 @@
 }
 
 .search-alt-text-container{
-  
   display: flex;
   justify-content: space-around;
   width: 500px;
-  
   align-items: left;
 }
+
 .search-alt-text{
   margin-top: 10px;
   font-size: 20px;
   text-decoration: underline;
   color:rgb(32, 90, 178);
-  /* margin-left: 20px; */
 }
 
 .search-alt-text:hover{
   color: white;
   cursor: pointer;
 }
-
-
-.not-found-message {
-  color: #d32f2f; 
-  margin-top: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  text-align: center;
-  max-width: 500px;
-  padding: 8px;
-  background-color: #ffebee; 
-  border-radius: 4px;
-  border-left: 3px solid #d32f2f;
-  animation: fadeIn 0.3s ease-in;
-}
-
-.found-message{
-  color: #2fd37b; 
-  margin-top: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  text-align: center;
-  max-width: 500px;
-  padding: 8px;
-  background-color: #ebfff1; 
-  border-radius: 4px;
-  border-left: 3px solid #2fd37b;
-  opacity: 1;
-  animation: fade 2s linear;
-}
-
-.duplicate-message{
-  color: #d32f2f; 
-  margin-top: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  text-align: center;
-  max-width: 500px;
-  padding: 8px;
-  background-color: #ffebee; 
-  border-radius: 4px;
-  border-left: 3px solid #d32f2f;
-  animation: fadeIn 0.3s ease-in;
-}
-
-
-@keyframes fade {
-0%,100% { opacity: 0 }
-50% { opacity: 1 }}
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-
-/******* SEARCH BY TIME *******/
-.search-by-time{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-
-}
+/* ===== SEARCH BY TIME ===== */
 
 .search-by-time-btn{
   padding: 10px 20px;
@@ -235,7 +170,6 @@
   background-color: rgb(29, 29, 29);
   color: white;
   cursor: pointer;
-
 }
 
 .selected{
@@ -248,36 +182,18 @@
   cursor: pointer;
 }
 
-
 .search-by-time-container{
   display: flex;
   flex-direction: column;
   max-width: 550px;
 }
 
-
-
 .search-form-submit{
   width: 500px;
   
 }
 
-.react-time-picker__inputGroup__input {
-  width:65px !important; 
-  font-size: 16px; 
-  margin-right: 2px;
-}
-
-.react-time-picker__inputGroup{
-  display: flex;
-}
-
-.react-time-picker__wrapper{
-  display: flex;
-}
-
 .time-input{
-  
   margin-bottom: 15px;
 }
 
@@ -299,7 +215,24 @@
   font-size: 20px;
 }
 
-/******* CALENDAR *******/
+
+
+/* Time Picker Custom Styles */
+.react-time-picker__inputGroup__input {
+  width:65px !important; 
+  font-size: 16px; 
+  margin-right: 2px;
+}
+
+.react-time-picker__inputGroup{
+  display: flex;
+}
+
+.react-time-picker__wrapper{
+  display: flex;
+}
+
+/* ===== CALENDAR COMPONENT ===== */
 
 .calendar{
   display:flex;
@@ -319,15 +252,6 @@
   
 }
 .added-exam{
-/*   
-  background-color: rgb(59, 58, 58);
-  padding: 50px 80px;
-  margin-top: 15px;
-  border-radius: 10px;
-  
-  box-shadow: 1px;
-  color:white; */
-
   background: white;
   border-radius: 10px;
   padding: 50px 80px;
@@ -372,6 +296,52 @@
   opacity: 0.7;
 }
 
+/* ===== MESSAGE STYLES ===== */
+.not-found-message, .duplicate-message {
+  color: #d32f2f; 
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 500px;
+  padding: 8px;
+  background-color: #ffebee; 
+  border-radius: 4px;
+  border-left: 3px solid #d32f2f;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.found-message{
+  color: #2fd37b; 
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 500px;
+  padding: 8px;
+  background-color: #ebfff1; 
+  border-radius: 4px;
+  border-left: 3px solid #2fd37b;
+  opacity: 1;
+  animation: fade 2s linear;
+}
+
+/* ===== MARQUEE COMPONENT ===== */
+.marquee-announcement{
+  margin-bottom: 4px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}
+  
+ @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 @keyframes subtle-pulse {
   0% {
     box-shadow: 
@@ -390,33 +360,6 @@
   }
 }
 
-.search-by-course,
-.search-by-time {
-  opacity: 0;
-  animation: fadeIn 0.8s ease-in-out forwards;
-  animation-delay: 0.2s;
-}
-
-.search-form-select, 
-.react-select__control {
-  position: relative;
-  z-index: 1; 
-}
-
-.courseName {
-  z-index: 1000 !important;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .search-form > *,
 .search-by-time-container > * {
@@ -485,13 +428,24 @@
   animation-delay: 0.5s;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.calendar {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.calendar.loaded {
+  opacity: 1;
+}
+
+.added-exam {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.calendar.loaded .added-exam {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes fadeInUp {
@@ -516,31 +470,19 @@
   }
 }
 
-.calendar {
-  opacity: 0;
-  transition: opacity 0.5s ease;
+
+.search-form-select, 
+.react-select__control {
+  position: relative;
+  z-index: 1; 
 }
 
-.calendar.loaded {
-  opacity: 1;
+.courseName {
+  z-index: 1000 !important;
 }
 
-.added-exam {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
 
-.calendar.loaded .added-exam {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/******* MARQUEE *******/
-.marquee-announcement{
-  margin-bottom: 4px;
-}
-
+/* ===== MEDIA QUERIES ===== */
 @media only screen and (max-width: 600px) {
   .search-form, .welcome, .search-form-select, Button,
   .search-alt-text-container, .search-by-time-container,
@@ -624,7 +566,4 @@
     box-sizing: border-box;
   }
   
-  
-
- 
 }
