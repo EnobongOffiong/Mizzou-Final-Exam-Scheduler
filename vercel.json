@@ -25,9 +25,7 @@
         "dest": "backend/server.js"
       },
      
-      {
-        "src": "/(.*)",
-        "dest": "frontend/mizzou-scheduler/index.html"
-      }
+      { "src": "/[^.]+", "dest": "/", "status": 200 }
     ]
   }
+
