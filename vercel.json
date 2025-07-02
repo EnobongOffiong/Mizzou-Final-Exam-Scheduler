@@ -15,9 +15,22 @@
     ],
     "routes": [
     
-      
+      {
+        "src": "/([^/]+)/(\\d+)", 
+        "dest": "backend/server.js"
+      },
      
-      { "src": "/calendar", "dest": "/frontend/mizzou-scheduler/dist/index.html", "status": 200 }
-    ]
+      {
+        "src": "/([^/]+)/([^/]+)/([^/]+)",  
+        "dest": "backend/server.js"
+      }
+    ],
+    "rewrites": [
+        {
+          "source": "/(.*)",
+          "destination": "frontend/mizzou-scheduler/index.html"
+        }
+      ]
+    
   }
 
