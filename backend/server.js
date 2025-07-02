@@ -17,11 +17,11 @@ app.use(cors({
   }));
 
 // endpoint to get an exam date by given course and course number
-router.get('api/:course/:number', getExamByCourse)
+router.get('/:course/:number', getExamByCourse)
 //endpoint to get an exam date by given meeting days and times
-router.get('api/:meetingDays/:startTime/:endTime', getExamByMeeting)
+router.get('/:meetingDays/:startTime/:endTime', getExamByMeeting)
 
-app.use('/', router)
+app.use('/api', router)
 
 app.listen(PORT, ()=> console.log("Server running"))
 export default app
