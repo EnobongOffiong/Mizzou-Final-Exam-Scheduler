@@ -22,7 +22,7 @@ import path from 'path'
 export default defineConfig({
   plugins: [react({ jsxRuntime: 'automatic' })],
   build: {
-    outDir: path.resolve(__dirname, 'dist'),
+    outDir: path.resolve(__dirname, 'dist'), 
     emptyOutDir: true,
     rollupOptions: {
       output: {

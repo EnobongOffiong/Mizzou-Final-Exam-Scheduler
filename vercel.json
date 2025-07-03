@@ -1,11 +1,13 @@
-{
+
+  {
     "version": 2,
     "builds": [
       {
         "src": "frontend/mizzou-scheduler/package.json",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "frontend/mizzou-scheduler/dist"
+          "distDir": "dist",
+          "outputDirectory": "frontend/mizzou-scheduler/dist"
         }
       },
       {
