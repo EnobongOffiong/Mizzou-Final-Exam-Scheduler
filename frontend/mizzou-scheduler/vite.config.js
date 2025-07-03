@@ -21,22 +21,13 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react({ jsxRuntime: 'automatic' })],
-  server: {
-    open: true
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
-    }
-  },
   build: {
     outDir: path.resolve(__dirname, 'dist'),
     emptyOutDir: true,
     rollupOptions: {
       output: {
         assetFileNames: 'assets/[name].[hash][extname]',
-        entryFileNames: 'assets/[name].[hash].js',
-        chunkFileNames: 'assets/[name].[hash].js'
+        entryFileNames: 'assets/[name].[hash].js'
       }
     }
   },
