@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(cors({
     origin: [
       'http://localhost:5173', // Dev
-      'https://mizzou-scheduler.vercel.app' // Prod frontend
+      'https://mizzou-final-exam-scheduler.vercel.app/' // Prod frontend
     ],
     methods: ['GET']
   }));
