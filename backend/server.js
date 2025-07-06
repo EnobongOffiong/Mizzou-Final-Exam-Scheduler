@@ -10,10 +10,6 @@ const router = express.Router()
 const PORT = 8080
 app.use(express.json())
 app.use(cors({
-    origin: [
-      'http://localhost:5173', // Dev
-      'https://mizzou-final-exam-scheduler.vercel.app/' // Prod frontend
-    ],
     methods: ['GET']
   }));
 
