@@ -22,7 +22,7 @@ router.get('/:course/:number', getExamByCourse)
 //endpoint to get an exam date by given meeting days and times
 router.get('/:meetingDays/:startTime/:endTime', getExamByMeeting)
 
-app.use('/api', router)
+app.use('/', router)
 
 app.listen(PORT, ()=> console.log("Server running"))
 export default app
