@@ -5,9 +5,10 @@ import 'dotenv/config'
 import { getExamByCourse, getExamByMeeting } from './routes.js'
 
 export const app = express()
+
 const router = express.Router()
 const PORT = 8080
-
+app.use(express.json())
 app.use(cors({
     origin: [
       'http://localhost:5173', // Dev
