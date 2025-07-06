@@ -74,12 +74,17 @@ button:focus-visible {
 
 html{
   background-image: linear-gradient(to right, rgb(121, 101, 5) , rgb(242, 219, 14));
+  overscroll-behavior: none;
+  
+  
 }
 
  body{
+  
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-image: linear-gradient(to right, rgb(121, 101, 5) , rgb(242, 219, 14));
-  margin: 10px;
   overscroll-behavior: none;
+
+
   
 }

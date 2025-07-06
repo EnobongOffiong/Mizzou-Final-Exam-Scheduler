@@ -156,7 +156,7 @@ export default function SearchByTime({
                 <div>
                     <p className="time-input-label">What days do you have this class?</p>
                     
-                    <div style={{marginBottom: '15px'}}>
+                    <div className= "desktop-buttons" style={{marginBottom: '15px'}} >
                         {days.map((day) => (
                             <button
                                 key={day.id} 
@@ -166,6 +166,20 @@ export default function SearchByTime({
                                 className={selectedDays.some(d => d.value === day.value) ? 'selected' : 'search-by-time-btn'}
                             >
                                 {day.label}
+                            </button>
+                        ))}
+                    </div>
+                    
+                    <div className= "mobile-buttons" style={{marginBottom: '15px'}} >
+                        {days.map((day) => (
+                            <button
+                                key={day.id} 
+                                id={day.id}
+                                onClick={handleDaySelect}
+                                value={day.value}
+                                className={selectedDays.some(d => d.value === day.value) ? 'selected' : 'search-by-time-btn'}
+                            >
+                                {day.value}
                             </button>
                         ))}
                     </div>

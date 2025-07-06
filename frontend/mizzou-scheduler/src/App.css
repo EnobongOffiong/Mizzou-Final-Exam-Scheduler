@@ -45,7 +45,9 @@
 .App{
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+ 
+  
   
 }
 
@@ -180,6 +182,14 @@
   border-radius: 5px;
   border: none;
   cursor: pointer;
+}
+
+.mobile-buttons {
+  display: none;
+}
+
+.desktop-buttons {
+  display: block;
 }
 
 .search-by-time-container{
@@ -484,12 +494,24 @@
 
 /* ===== MEDIA QUERIES ===== */
 @media only screen and (max-width: 600px) {
+  .mobile-buttons {
+    display: block;
+  }
+  
+  .desktop-buttons {
+    display: none;
+  }
+
   .search-form, .welcome, .search-form-select, Button,
   .search-alt-text-container, .search-by-time-container,
   .search-form-instructions, .welcome-text{
     max-width: 300px;
     width: 100%;
+    
   }
+  /* .search-by-time, .search-by-course{
+    flex-grow: unset;
+  } */
 
   .search-by-time-btn{
     margin-bottom: 5px;
@@ -546,9 +568,29 @@
   body, html {
     overflow-x: hidden;
   }
+
+  .selected, .search-by-time-btn{
+    padding: 10px 5px;
+    max-width: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
 }
 
 @media only screen and (max-width: 400px){
+  .marquee-announcement{
+    font-size: smaller;
+  }
+  .mobile-buttons {
+    display: block;
+  }
+  
+  .desktop-buttons {
+    display: none;
+  }
+
   .logo-img{
     width:70px;
     height: auto;
@@ -560,10 +602,11 @@
   }
 
   .added-exam{
-    padding: 30px 60px;
+    padding: 25px 50px;
     font-size: 18px;
     width: 100%; 
     box-sizing: border-box;
   }
   
 }
+
