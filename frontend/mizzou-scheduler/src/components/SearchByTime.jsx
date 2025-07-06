@@ -59,8 +59,8 @@ export default function SearchByTime({
         for(let day in selectedDays) {
             meetingDays += selectedDays[day].value; 
         }
-
-        const url = `${API_BASE_URL}/api/${meetingDays}/${startTime}/${endTime}`; //populate url with provided information
+        console.log(API_BASE_URL)
+        const url = `${API_BASE_URL}/${meetingDays}/${startTime}/${endTime}`; //populate url with provided information
 
         try {
 
