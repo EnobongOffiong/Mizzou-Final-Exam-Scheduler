@@ -38,6 +38,7 @@
 
 .welcome{
   width: 500px;
+  margin-left: 10px;
 }
 
 .welcome-header {
@@ -464,9 +465,6 @@
     width: 100%;
     
   }
-  /* .search-by-time, .search-by-course{
-    flex-grow: unset;
-  } */
 
   .search-by-time-btn{
     margin-bottom: 5px;
@@ -482,7 +480,7 @@
   }
   
   .search-form-header{
-    font-size: 45px;
+    font-size: 40px;
   }
 
   .logo-img{
@@ -553,6 +551,7 @@
 
   .navbar > .css-1j02yc7-MuiButtonBase-root-MuiButton-root{
     font-size: 8px;
+   width :30px;
     
   }
 
@@ -561,6 +560,18 @@
     font-size: 18px;
     width: 100%; 
     box-sizing: border-box;
+  }
+
+  .welcome-header{   
+      font-size: 35px;
+  }
+
+  .home-welcome-img {
+    width: 325px;
+  }
+
+  .nav-text{
+    font-size: smaller;
   }
   
 }

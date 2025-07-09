@@ -21,18 +21,18 @@ function Nav(){
 
                     <NavLink className= "navbar-item" activeClassName="active" to='/search'>
                    
-                        <p>Search</p>
+                        <p className='nav-text'>Search</p>
                     </NavLink>
 
                     <NavLink className= "navbar-item" activeClassName="active" to='/calendar'>
-                        Calendar
+                        <p className='nav-text'>Calendar</p>
                     </NavLink>
 
                     {/* <NavLink className= "navbar-item" activeClassName="active" to='/contact'>
                         Contact
                     </NavLink> */}
 
-                    <Button sx={{ backgroundColor: '#FFFFFF', color: 'black' }} className= 'navbar-btn'variant='contained' href={registrarWebsiteURL} target='_blank' >
+                    <Button sx={{ backgroundColor: '#FFFFFF', color: 'black' }} className= 'navbar-btn' variant='contained' href={registrarWebsiteURL} target='_blank' >
                     View Exam Schedules</Button>
                     
                 </nav>
