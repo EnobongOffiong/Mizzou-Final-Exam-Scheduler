@@ -1,3 +1,26 @@
-export const courseNums = [{
-    value: 3229, label: '3229'
-}]
+export const courseNums = [
+    { value: 1014, label: '1014' },
+    { value: 1015, label: '1015' },
+    { value: 1050, label: '1050' },
+    { value: 1100, label: '1100' },
+    { value: 1160, label: '1160' },
+    { value: 1200, label: '1200' },
+    { value: 1210, label: '1210' },
+    { value: 1220, label: '1220' },
+    { value: 1300, label: '1300' },
+    { value: 1400, label: '1400' },
+    { value: 1410, label: '1410' },
+    { value: 1500, label: '1500' },
+    { value: 1700, label: '1700' },
+    { value: 2036, label: '2036' },
+    { value: 2037, label: '2037' },
+    { value: 2258, label: '2258' },
+    { value: 2300, label: '2300' },
+    { value: 2500, label: '2500' },
+    { value: 3226, label: '3226' },
+    { value: 3229, label: '3229' },
+    { value: 3328, label: '3328' },
+    { value: 3347, label: '3347' },
+    { value: 3500, label: '3500' }
+
+]

@@ -131,6 +131,12 @@ export default function SearchByTime({
             : setEndTime(`${time}:00`);
     }
 
+    function reset(){
+        setNotFound(false);
+        setCourseFound(false);
+        setDuplicate(false)
+    }
+
     return (
         <div className="search-by-time">
             <div className="search-by-time-container">
@@ -149,7 +155,13 @@ export default function SearchByTime({
                         required 
                         value={examName}
                         placeholder="STATS 4710, Piano Class, etc." 
-                        onChange={(e) => setExamName(e.target.value)}
+                        onChange={
+                            (e) => {
+                                setExamName(e.target.value)
+                                reset()
+                            }
+                            
+                        }
                     />
                 </div>
                 
@@ -161,7 +173,11 @@ export default function SearchByTime({
                             <button
                                 key={day.id} 
                                 id={day.id}
-                                onClick={handleDaySelect}
+                                onClick={(e)=>{
+                                    handleDaySelect(e)
+                                    reset()
+                                }
+                                   }
                                 value={day.value}
                                 className={selectedDays.some(d => d.value === day.value) ? 'selected' : 'search-by-time-btn'}
                             >
@@ -175,7 +191,10 @@ export default function SearchByTime({
                             <button
                                 key={day.id} 
                                 id={day.id}
-                                onClick={handleDaySelect}
+                                onClick={(e)=>{
+                                    handleDaySelect(e)
+                                    reset()
+                                }}
                                 value={day.value}
                                 className={selectedDays.some(d => d.value === day.value) ? 'selected' : 'search-by-time-btn'}
                             >
@@ -189,7 +208,10 @@ export default function SearchByTime({
                     <p className="time-input-label">When does your class start?</p>
                     <TimePicker 
                         className="time-input"
-                        onChange={(time) => handleTimeChange(time, 'startPicker')}
+                        onChange={(time) => {
+                            handleTimeChange(time, 'startPicker')
+                            reset()
+                        }}
                         clearIcon={null}
                         value={startTime}
                         disableClock={true}
@@ -201,7 +223,10 @@ export default function SearchByTime({
                     <p className="time-input-label">When does your class end?</p>
                     <TimePicker 
                         className="time-input"
-                        onChange={(time) => handleTimeChange(time, 'endPicker')}
+                        onChange={(time) => {
+                            handleTimeChange(time, 'endPicker')
+                            reset()
+                        }}
                         clearIcon={null}
                         value={endTime}
                         disableClock={true}
@@ -226,9 +251,7 @@ export default function SearchByTime({
                     <p 
                         onClick={() => {
                             setSearchingByCourse(true);
-                            setNotFound(false);
-                            setCourseFound(false);
-                            setDuplicate(false)
+                            reset()
                         }}
                         className="search-alt-text"
                     >

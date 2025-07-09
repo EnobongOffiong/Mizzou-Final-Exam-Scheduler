@@ -4,7 +4,7 @@ import { Button } from '@mui/material';
 import { Link } from "react-router-dom";
 
 function Home(){
-    const logoImgURL= 'https://content.sportslogos.net/logos/32/757/full/missouri_tigers_logo_secondary_19998019.png'
+    
     return(
         <>
            
@@ -23,7 +23,7 @@ function Home(){
                         component={Link} to="/search">Get Started</Button>
                 </div>
 
-                <img className='home-welcome-img'src = {examSchedule}  alt='Mizzou Logo'/>
+                <img className='home-welcome-img'src = {examSchedule}  alt='Boy looking at exam calendar'/>
 
 
             </div>

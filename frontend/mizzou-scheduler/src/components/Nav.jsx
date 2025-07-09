@@ -1,17 +1,17 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Button } from '@mui/material'
+import logo from '../assets/mizzou-logo.png'
 function Nav(){
 
     const registrarWebsiteURL = 'https://registrar.missouri.edu/academic-calendar/final-exam-schedule/'
-    const logoImgURL= 'https://content.sportslogos.net/logos/32/757/full/missouri_tigers_logo_secondary_19998019.png'
     return (
         <>
             <div className='navbar-container'>
 
                 <nav className='navbar'>
                     <Link to='/' className='logo'>
-                        <img className='logo-img'src = {logoImgURL}  alt='Mizzou Logo'/>
+                        <img className='logo-img'src = {logo}  alt='Mizzou Logo'/>
                     </Link>
 
                     <NavLink className= "navbar-item" activeClassName="active" to='/'>

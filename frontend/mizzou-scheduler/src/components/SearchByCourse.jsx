@@ -19,7 +19,8 @@ export default function SearchByCourse({
     notFound,
     courseFound,
     duplicate,
-    duplicateExam
+    duplicateExam,
+    
 }) {
 
     //state storing the course and cour name users select
@@ -39,9 +40,7 @@ export default function SearchByCourse({
         e.preventDefault(); //prevent errors
         
         let { courseName, courseNumber } = formData; 
-        console.log(formData);
-        console.log(import.meta.env)
-        console.log("hey")
+
         console.log(import.meta.env.VITE_API_BASE_URL_PROD )
         const url = `${API_BASE_URL}/${courseName}/${courseNumber}`; //populate url with provided information
         
@@ -57,7 +56,7 @@ export default function SearchByCourse({
             };// format the exam date gotten from the response and add the exam name
             
             
-           // setRes(data);
+          
 
             console.log(data);
             console.log(import.meta.env)
@@ -100,7 +99,12 @@ export default function SearchByCourse({
             ...formData,
             [meta.name]: selectedOption.value
         });
-        console.log(selectedOption);
+    }
+
+    function reset(){
+        setNotFound(false);
+        setCourseFound(false);
+        setDuplicate(false)
     }
 
     return (
@@ -127,8 +131,10 @@ export default function SearchByCourse({
                     className="search-form-select courseName" 
                     name="courseName"
                     options={courseNameOptions} 
-                    onChange={handleSelectChange} 
-                    placeholder="Select a course"  
+                    onChange={(selectedOption, meta)=>{handleSelectChange(selectedOption, meta)
+                        reset()
+                    }} 
+                    placeholder="Search/select a course"  
                     isSearchable={true}
                 />
 
@@ -136,9 +142,12 @@ export default function SearchByCourse({
                     className="search-form-select" 
                     name="courseNumber"
                     options={courseNumOptions} 
-                    onChange={handleSelectChange}
-                    placeholder="Select a course number"  
+                    onChange={(selectedOption, meta)=>{handleSelectChange(selectedOption, meta)
+                        reset()
+                    }} 
+                    placeholder="Search/select a course number"  
                     isSearchable={true}
+                    
                 />
 
                 <Button 
@@ -159,9 +168,7 @@ export default function SearchByCourse({
                     <p 
                         onClick={() => {
                             setSearchingByCourse(false);
-                            setNotFound(false);
-                            setCourseFound(false);
-                            setDuplicate(false)
+                            reset()
                         }} 
                         className="search-alt-text"
                     >

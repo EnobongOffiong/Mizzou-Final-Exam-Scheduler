@@ -1,7 +1,3 @@
-// import { useState, useEffect } from 'react'
-// import { NavLink ,Link} from 'react-router-dom'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import React from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
@@ -10,7 +6,7 @@ import Home from './components/Home.jsx'
 import Search from './components/Search.jsx'
 import Calendar from './components/Calendar.jsx'
 import Marquee from './components/Marquee.jsx'
-// import { Analytics } from '@vercel/analytics';
+
 
 function App() {
   
