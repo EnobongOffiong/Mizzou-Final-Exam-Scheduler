@@ -1,24 +1,9 @@
-# name: Frontend CI pipeline
-# on: push
-
-# jobs:
-#     branch_name:
-#         runs-on: ubuntu-latest
-#         steps:
-#             - name: Checkout code
-#               uses: actions/checkout@v3
-
-#             - name: Echo Branch Name
-            #   run: echo 'The name of this branch is' 
-#     deploy:
-#         needs: branch_name
-#         runs-on: ubuntu-latest
-#         steps:
-#             - name: Deploying to production
-#               run: 'echo Deploying...'
 
 name: CI/CD pipeline
-on: push
+on: 
+  push:
+    branches:
+         - main
 
 jobs:
     backend:
@@ -27,12 +12,6 @@ jobs:
             - name: Checkout 
               uses: actions/checkout@v3
             
-            # - name: Use Node.js ${{ matrix.node-version }}
-            #   uses: actions/setup-node@v4
-            #   with:
-            #     node-version: ${{ matrix.node-version }}
-            #     cache: 'npm'
-            
             - name: Install backend dependencies
               working-directory: ./backend
               run: npm install
@@ -40,6 +19,14 @@ jobs:
             - name: Run backend tests
               working-directory: ./backend
               run: npm test
+            
+            # - name: Install Vercel CLI
+            #   working-directory: ./backend
+            #   run: npm install --global vercel@latest
+            #       vercel --prod --token=${{ secrets.VERCEL_TOKEN }} \
+            #       --scope=${{ secrets.VERCEL_ORG_ID }} \
+            #       --confirm
+        
 
 
     frontend:
@@ -50,12 +37,6 @@ jobs:
         - name: Checkout 
           uses: actions/checkout@v3
       
-      # - name: Use Node.js ${{ matrix.node-version }}
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: ${{ matrix.node-version }}
-      #     cache: 'npm'
-      
         - name: Install frontend dependencies
           working-directory: ./frontend/mizzou-scheduler
           run: npm install
@@ -63,3 +44,14 @@ jobs:
         - name: Run frontend tests
           working-directory: ./frontend/mizzou-scheduler
           run: npm test
+        
+        # - name: Build frontend
+        #   working-directory: ./frontend/mizzou-scheduler
+        #   run: npm run build
+
+        # - name: Deploy to Vercel
+        #   working-directory: ./frontend/mizzou-scheduler
+        #   run: vercel --prod --token=${{secrets.VERCEL_TOKEN}}
+        #   env:
+        #     VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+        #     VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
